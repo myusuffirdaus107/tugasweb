@@ -1,3 +1,3 @@
 # Screenshot Hasil
 
-![Tampilan Website](logo/preview.png)
+![Tampilan Website](logo/preview.PNG)
