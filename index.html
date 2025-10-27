@@ -100,6 +100,22 @@
       color: #00b4d8;
     }
 
+    /* Tombol */
+    button {
+      background-color: #00b4d8;
+      color: #111;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #90e0ef;
+    }
+
     /* Footer */
     footer {
       text-align: center;
@@ -139,6 +155,12 @@
       seperti Threesixty dan SHA. Dengan semangat muda dan gaya khas kami, 
       The Kubok berusaha menghadirkan musik yang menyuarakan kisah kehidupan, cinta, dan kebebasan.
     </p>
+
+    <!-- Tombol Interaksi JavaScript -->
+    <div style="margin-top:20px; text-align:center;">
+      <button onclick="tampilkanAnggota()">🎸 Lihat Anggota Band</button>
+      <p id="anggota" style="margin-top:15px; color:#90e0ef; font-weight:bold;"></p>
+    </div>
   </section>
 
   <!-- Musik -->
@@ -177,6 +199,35 @@
   <footer>
     &copy; 2025 The Kubok | Made with 🤘 by M. Yusuf Firdaus
   </footer>
+
+  <!-- Script JavaScript -->
+  <script>
+    let tampil = false; // status awal: belum ditampilkan
+
+    function tampilkanAnggota() {
+      const anggota = [
+        "🎤 Arys - Vocal",
+        "🎸 Kiwil - Gitar rhythm",
+        "🎸 Ucupp - Gitar lead",
+        "🎵 Kisur - Bass",
+        "🥁 Dedot - Drum"
+      ];
+
+      const elemen = document.getElementById("anggota");
+      const tombol = document.querySelector("button[onclick='tampilkanAnggota()']");
+
+      if (!tampil) {
+        elemen.innerHTML = "🔥 Anggota The Kubok:<br>" + anggota.join("<br>");
+        tombol.innerText = "❌ Tutup Daftar Anggota";
+        tampil = true;
+      } else {
+        elemen.innerHTML = "";
+        tombol.innerText = "🎸 Lihat Anggota Band";
+        tampil = false;
+      }
+    }
+  </script>
+
 
 </body>
 </html>
